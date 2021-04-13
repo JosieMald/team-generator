@@ -10,7 +10,7 @@ class Engineer extends Employee {
     getGitHub() {
         return this.gitHub;
     }
-    getRoll() {
+    getRole() {
         return 'Engineer'
     }
 }
