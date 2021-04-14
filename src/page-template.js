@@ -1,30 +1,82 @@
-// // generate the HTML pages
-// const generateTeam = team => {
-//     // A method for a template to render manager info
-
+const Employee =  require('../library/Employee');
 const Manager = require("../library/Manager");
 const managerQs = require("../Questions/manager");
+const Engineer = require('../library/Engineer');
+const engineerQs = require('../Questions/engineer');
+const Intern = require('../library/Intern');
+const internQs = require('../Questions/intern');
+
+
+
+ // A method for a template to render manager info
+
+const  generateManager = managerQs => {
+    return `
+    <div class="card" style="width: 18rem">
+    <div class="card-header">
+    <h2>${managerQs.getName()}</h2>
+    <h3>${managerQs.getRole()}</h3>
+    </div>
+    <div class="card-body">
+    <ul class="list-group">
+    <li class="list-group-item">${managerQs.getId()}</li>
+    <li class="list-group-item">${managerQs.getEmail()}</li>
+    <li class="list-group-item">${managerQs.getOfficeNumber()}</li>
+    </ul>
+    </div>
+    </div>
+    `
+};
 
 //    // A method for a template to render engineer info
 
-//    // A method for a template to render intern info
-const  generateManager = manager => {
-   return `${manager.getName()} etc etc`
+const  generateEngineer = engineerQs => {
+    return `
+    <div class="card" style="width: 18rem">
+    <div class="card-header">
+    <h2>${engineerQs.getName()}</h2>
+    <h3>${engineerQs.getRole()}</h3>
+    </div>
+    <div class="card-body">
+    <ul class="list-group">
+    <li class="list-group-item">${engineerQs.getId()}</li>
+    <li class="list-group-item">${engineerQs.getEmail()}</li>
+    <li class="list-group-item">${engineerQs.getGitHub()}</li>
+    </ul>
+    </div>
+    </div>
+    `
 };
 
-// const html = [];
-//    html.push(team.filter(employee => employee.getRole() === "Manager")
-//        .map(manager => generateManager(manager))
-//    );
-//    return html.join("");
-// };
+//    // A method for a template to render intern info
+
+const  generateIntern = internQs => {
+    return `
+    <div class="card" style="width: 18rem">
+    <div class="card-header">
+    <h2>${internQs.getName()}</h2>
+    <h3>${internQs.getRole()}</h3>
+    </div>
+    <div class="card-body">
+    <ul class="list-group">
+    <li class="list-group-item">${internQs.getId()}</li>
+    <li class="list-group-item">${internQs.getEmail()}</li>
+    <li class="list-group-item">${internQs.getSchool()}</li>
+    </ul>
+    </div>
+    </div>
+    `
+};
+
 function sortTeam(team) {
-    const managerArray = team.filter(employee => employee.getRole() === 'Manager');
+    const managerArray = team.filter(employee => employee.getRole() === 'Manager')
+    .map(managerQs => generateManager(managerQs));
     console.log(managerArray);
-    managerArray.renderManager();
-    const engineerArray = team.filter(employee => employee.getRole() === 'Engineer');
+    const engineerArray = team.filter(employee => employee.getRole() === 'Engineer')
+    .map(engineerQs => generateEngineer(engineerQs));
     console.log(engineerArray);
-    const internArray = team.filter(employee => employee.getRole() === 'Intern');
+    const internArray = team.filter(employee => employee.getRole() === 'Intern')
+    .map(internQs => generateIntern(internQs));
     console.log(internArray);
 
 }

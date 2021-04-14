@@ -64,12 +64,6 @@ const askIntern = () => {
     })
 }
   
-  
-
-
-
-
-
   function buildTeam() {
     // Create the output directory if the output path doesn't exist
     if (!fs.existsSync(OUTPUT_DIR)) {
@@ -83,9 +77,5 @@ runApp();
 
 // pageTemplate(answers_from_inquirer_prompt);
 // INDEX FILES ARE CONSIDERED THE ENTRY POINT TO YOUR APPLICATION
-
-// IF THIS IS YOUR ENTRY POINT, YOU MUST DO YOUR INQUIRER HERE
-
-// THIS IS WHERE YOU DO YOUR FS WRITEFILE STUFF
 
 // THE DIST FOLDER IS WHERE THE OUTPUT HTML FILES WILL LAND
