@@ -1,4 +1,4 @@
-// THIS IS WHERE YOUR MAIN LOGIC WILL LIE
+
 const path = require("path");
 const inquirer = require('inquirer');
 const fs = require("fs");
@@ -14,7 +14,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "dist")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 function runApp() {
-//   ...Inquirer prompt and the functions that will ask users about manager, intern, and engineer.
+
 inquirer
 .prompt([ 
     {
@@ -73,9 +73,3 @@ const askIntern = () => {
   }
 
 runApp();
-
-
-// pageTemplate(answers_from_inquirer_prompt);
-// INDEX FILES ARE CONSIDERED THE ENTRY POINT TO YOUR APPLICATION
-
-// THE DIST FOLDER IS WHERE THE OUTPUT HTML FILES WILL LAND
