@@ -1,21 +1,33 @@
-// generate the HTML pages
-const generateTeam = team => {
-    // A method for a template to render manager info
+// // generate the HTML pages
+// const generateTeam = team => {
+//     // A method for a template to render manager info
 
-   // A method for a template to render engineer info
+const Manager = require("../library/Manager");
+const managerQs = require("../Questions/manager");
 
-   // A method for a template to render intern info
-const  generateManager = manager = {
+//    // A method for a template to render engineer info
+
+//    // A method for a template to render intern info
+const  generateManager = manager => {
    return `${manager.getName()} etc etc`
-}
-const html = [];
-   html.push(team
-       .filter(employee => employee.getRole() === "Manager")
-       .map(manager => generateManager(manager))
-   );
-   return html.join("");
-}
+};
 
+// const html = [];
+//    html.push(team.filter(employee => employee.getRole() === "Manager")
+//        .map(manager => generateManager(manager))
+//    );
+//    return html.join("");
+// };
+function sortTeam(team) {
+    const managerArray = team.filter(employee => employee.getRole() === 'Manager');
+    console.log(managerArray);
+    managerArray.renderManager();
+    const engineerArray = team.filter(employee => employee.getRole() === 'Engineer');
+    console.log(engineerArray);
+    const internArray = team.filter(employee => employee.getRole() === 'Intern');
+    console.log(internArray);
+
+}
 // We are exporting out an anonymous function
 module.exports = team => {
    return `
@@ -42,7 +54,7 @@ module.exports = team => {
        <div class="row">
            <div class="team-area col-12 d-flex justify-content-center">
                YOUR METHOD GOES HERE THE CARDS OF MANAGER, INTERN, ENGINEER WILL BE. 
-               ${someFunction(team)}
+               ${sortTeam(team)}
            </div>
        </div>
    </div>

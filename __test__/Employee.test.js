@@ -1,6 +1,5 @@
 const { TestScheduler } = require('@jest/core');
 const Employee = require('../library/Employee.js');
-// const Manager = require('../library/Manager.js');
 
 test('Can create employee object', () => {
     const e = new Employee();
@@ -22,4 +21,4 @@ test('Can set email', () => {
     expect(e.email).toBe(email);
 })
 
-// const manager = new Manager(1, 2, 3, 4);
+
