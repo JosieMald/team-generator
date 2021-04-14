@@ -8,7 +8,7 @@ const internQs = require('../Questions/intern');
 
 
 
- // A method for a template to render manager info
+// A method for a template to render manager info
 
 const  generateManager = managerQs => {
     return `
@@ -78,8 +78,8 @@ function sortTeam(team) {
     const internArray = team.filter(employee => employee.getRole() === 'Intern')
     .map(internQs => generateIntern(internQs));
     console.log(internArray);
-
 }
+
 // We are exporting out an anonymous function
 module.exports = team => {
    return `
@@ -92,7 +92,7 @@ module.exports = team => {
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c502137733.js"></script>
-   <title>Document</title>
+   <title>Team-Generator</title>
 </head>
 <body>
    <div class="container-fluid">
@@ -105,7 +105,6 @@ module.exports = team => {
    <div class="container">
        <div class="row">
            <div class="team-area col-12 d-flex justify-content-center">
-               YOUR METHOD GOES HERE THE CARDS OF MANAGER, INTERN, ENGINEER WILL BE. 
                ${sortTeam(team)}
            </div>
        </div>
